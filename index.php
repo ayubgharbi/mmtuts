@@ -8,11 +8,18 @@
 
 <?php
 
-    echo strlen("Hi Daniel");
-    echo strrev("Hi Daniel");
-    echo str_word_count("Hi Daniel");
-    echo strpos("Hi Daniel", "Daniel");
-    echo str_replace("Daniel", "Jason", "Hi Daniel");
+    //String
+    $name = 'Coding is fun';
+
+    //Integer
+    $name = 20;
+
+    //Float
+    $name = 20.5784;
+
+    //Array
+    $names = array("Daniel","Dennis","Michael");
+    echo $names['2']; 
 
 ?>
 
