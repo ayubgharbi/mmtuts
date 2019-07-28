@@ -8,15 +8,21 @@
 <body>
 
 <?php
-    //Loop
-    //While Loop
-    //Do while Loop
-    //For Loop
-    //Foreach Loop
-    $array = array("Daniel", "Jane", "Jacob", "John", "Mariane");
-    foreach ($array as $loopdata) {
-        echo "My name is ".$loopdata."<br>"; 
-    }
+
+
+function newCalc($x) {
+    $newnr = $x * 0.75;
+    echo "Here is 75% of what you wrote: ".$newnr;
+}
+
+$x = 100;
+newCalc($x);
+
+echo "<br>";
+
+$a = 10;
+newCalc($a);
+
 ?>
 </body>
 </html>
