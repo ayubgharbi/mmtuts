@@ -11,14 +11,16 @@
 <body>
 
 <?php
-    include 'header.php';
+include 'header.php';
 
-    $x = 5; 
-    function something() {
-        $y = 10;
-    }
+$x = 5; 
+function something() {
+    $y = 10;
+    echo $GLOBALS['x'];
+}
 
-    echo $x;
+something();
+
 ?>
 
 <section>
