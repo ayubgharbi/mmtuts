@@ -11,22 +11,15 @@
 <body>
 
 <?php
-include 'header.php';
 
-$x = 5; 
-function something() {
-    $y = 10;
-    echo $GLOBALS['x'];
-}
-
-something();
+echo $_GET['name'];
 
 ?>
 
-<section>
-    <div class="someMainContent">
-        <h1>Hi there!</h1>
-    </div>
-</section>
+<form method="GET">
+    <input type="hidden" name="name" value="Daniel">
+    <button type="submit">PRESS ME!</button>
+</form>
+
 </body>
 </html>
