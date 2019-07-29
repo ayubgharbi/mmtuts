@@ -1,31 +1,24 @@
 <?php 
-    session_start();
+    include_once 'includes/dbh.inc.php';
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Page Title</title>
-<link rel="stylesheet" type="text/css" href="style.css">
+    <title>Page Title</title>
 </head>
 <body>
 
-<ul>
-    <li><a href="index.php">Home</a></li>
-    <li><a href="contact.php">Contact</a></li>
-</ul>
-
 <?php
+    $sql = "SELECT * FROM users;";
+    $result = mysqli_query($conn, $sql);
+    $resultCheck = mysqli_num_rows($result);
 
-$_SESSION['username'] = "dani948a";
-echo $_SESSION['username'];
-
-if (!isset($_SESSION['username'])) {
-    echo "You are not logged in !";
-} else {
-    echo " You are logged in !";
-}
-
+    if ($resultCheck > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo $row['user_uid'] . "<br>";
+        }
+    }
 ?>
 
 </body>
