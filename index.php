@@ -1,43 +1,20 @@
-<?php
-    include_once 'includes/dbh.inc.php'; 
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Page Title</title>
+    <title>Error handler tutorial!</title>
 </head>
 <body>
+    <h2>Signup</h2>
+    <form action="includes/signup.inc.php" method="POST">
+        <input type="text" name="first" placeholder="Firstname">
+        <input type="text" name="last" placeholder="Lastname">
+        <input type="text" name="email" placeholder="E-mail">
+        <input type="text" name="uid" placeholder="Username">
+        <input type="password" name="pwd" placeholder="Password">
+        <button type="submit" name="submit">Sign up</button>
+    </form>
 
     
-
-<?php
-    include 'includes/form.php';
-    
-    $data = "Admin";
-    //Created a template
-    $sql = "SELECT * FROM users WHERE user_uid=?;";
-    //Create a prepared statement
-    $stmt = mysqli_stmt_init($conn);
-    //Prepaare the prepared statement
-    if (!mysqli_stmt_prepare($stmt, $sql)) {
-        echo "SQL statement failed";    
-    } else {
-        //Bind parameters to the placeholder
-        mysqli_stmt_bind_param($stmt, "s", $data);
-        //Run parameters inside database
-        mysqli_stmt_execute($stmt);
-        $result = mysqli_stmt_get_result($stmt);
-
-        while ($row = mysqli_fetch_assoc($result)) {
-            echo $row['user_uid'] . "<br>";
-        }
-    }
-    
-
-        
-          
-?>
 
 
 
